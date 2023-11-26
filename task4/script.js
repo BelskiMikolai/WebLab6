@@ -1,9 +1,13 @@
 
+let form = document.body.firstElementChild;
 
-function changeText() {
-   let text = document.body.firstElementChild;
-   text.innerHTML = "абзац <b>жирный</b>";
+function setSum() {
+   let num1 = +form.elements['num1'].value;
+   let num2 = +form.elements['num2'].value;
+   let sum = document.getElementById('sum');
+
+   sum.textContent = "= " + (num1 + num2);
 }
 
-let but = document.getElementById("myButton");
-but.addEventListener("click", changeText, {once: true});
+let button = form.elements['button'];
+button.addEventListener('click', setSum);
