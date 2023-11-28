@@ -1,0 +1,121 @@
+
+body {
+    background-color: aqua;
+}
+
+#container {
+    width: 200px;
+    height: 60px;
+
+    position: relative;
+    top: 200px;
+    left: 200px;
+}
+.container-move {
+    animation: move 6s ease-in;
+    display: none;
+}
+@keyframes move {
+    from {
+        display: block;
+        left: 200px;
+    }
+    50% {
+        display: block;
+        left: 200px;
+    }
+    to {
+        left: 120%;
+        display: block;
+
+    }
+}
+#container > *{
+    position: relative;
+}
+
+.button {
+    border-radius: 20px;
+    padding: 20px;
+    font-size: large;
+    text-align: center;
+    background-color: rgb(13, 134, 174);
+    color: aliceblue;   
+    z-index: 2;
+}
+.button:hover {
+    background-color: rgb(30, 109, 135);
+
+}
+.button:active {
+    background-color: rgb(22, 81, 101);
+}
+.button-move {
+    border-radius: 20px 20px 150px 80px;
+    animation: radius 1s ease-in;
+
+}
+@keyframes radius {
+    from {
+        border-radius: 20px;
+    }
+    to {
+        border-radius: 20px 20px 150px 80px;
+
+    }
+}
+
+
+.sails {
+    width: 180px;
+    background-color: rgb(13, 134, 174);
+    height: 10px;
+    transform-origin: 100% 50%; 
+    transform: rotate(90deg);
+    animation: rotate 3s ease-in;
+    bottom: 60px;
+    right: 60px;
+}
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(90deg);
+    }
+}
+.sails::before {
+    position: absolute;
+    content: '';
+    top: 15px;
+    border-bottom: 80px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 150px solid rgb(255, 255, 255);
+    border-top: 0px solid transparent;
+    animation: scale 5s ease-out;
+
+}
+.sails::after {
+    position: absolute;
+    content: '';
+    bottom: 15px;
+    border-bottom: 100px solid rgb(255, 255, 255);;
+    border-left: 160px solid transparent;
+    border-right: 0px solid transparent;
+    border-top: 50px solid transparent;
+    animation: scale 5s ease-out;
+}
+@keyframes scale{
+    from {
+        transform: scale(0, 1);
+        transform-origin: 100% 50%; 
+    }
+    50% {
+        transform: scale(0, 1);
+        transform-origin: 100% 50%; 
+    }
+    to {
+        transform: scale(1, 1);
+        transform-origin: 100% 50%; 
+    }
+}
