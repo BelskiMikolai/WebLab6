@@ -1,0 +1,11 @@
+
+button {
+    background-color: cornflowerblue;
+    border: 0px;
+}
+button:hover {
+    background-color: blue;
+}
+button:active {
+    background-color: rgb(0, 0, 151);
+}
